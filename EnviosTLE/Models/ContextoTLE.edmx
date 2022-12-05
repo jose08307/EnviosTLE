@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_TLEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DB_TLE.dbo.CLIENTE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+            <PropertyRef Name="IDENTIFICACION" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="APELLIDOS" />
+            <PropertyRef Name="DIRECCION" />
+            <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="TIPO" />
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="IDENTIFICACION" Type="numeric" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="NOMBRES" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="APELLIDOS" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TIPO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ID_FACTURA" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DB_TLE.dbo.FACTURA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="VALOR" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="FECHA" Type="datetime" Nullable="false" />
+          <Property Name="VALOR" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DB_TLE.dbo.PRODUCTO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+            <PropertyRef Name="PESO" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="PESO" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ALTO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ANCHO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="LARGO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ID_FACTURA" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_TLEModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CLIENTE].[ID_CLIENTE] AS [ID_CLIENTE], 
+    [CLIENTE].[IDENTIFICACION] AS [IDENTIFICACION], 
+    [CLIENTE].[NOMBRES] AS [NOMBRES], 
+    [CLIENTE].[APELLIDOS] AS [APELLIDOS], 
+    [CLIENTE].[DIRECCION] AS [DIRECCION], 
+    [CLIENTE].[TELEFONO] AS [TELEFONO], 
+    [CLIENTE].[TIPO] AS [TIPO], 
+    [CLIENTE].[ID_FACTURA] AS [ID_FACTURA]
+    FROM [dbo].[CLIENTE] AS [CLIENTE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [FACTURA].[ID_FACTURA] AS [ID_FACTURA], 
+    [FACTURA].[FECHA] AS [FECHA], 
+    [FACTURA].[VALOR] AS [VALOR]
+    FROM [dbo].[FACTURA] AS [FACTURA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUCTO].[ID_PRODUCTO] AS [ID_PRODUCTO], 
+    [PRODUCTO].[PESO] AS [PESO], 
+    [PRODUCTO].[ALTO] AS [ALTO], 
+    [PRODUCTO].[ANCHO] AS [ANCHO], 
+    [PRODUCTO].[LARGO] AS [LARGO], 
+    [PRODUCTO].[DESCRIPCION] AS [DESCRIPCION], 
+    [PRODUCTO].[ID_FACTURA] AS [ID_FACTURA]
+    FROM [dbo].[PRODUCTO] AS [PRODUCTO]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_TLEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+            <PropertyRef Name="IDENTIFICACION" />
+            <PropertyRef Name="NOMBRES" />
+            <PropertyRef Name="APELLIDOS" />
+            <PropertyRef Name="DIRECCION" />
+            <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="TIPO" />
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDENTIFICACION" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="NOMBRES" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDOS" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_FACTURA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FACTURA">
+          <Key>
+            <PropertyRef Name="ID_FACTURA" />
+            <PropertyRef Name="FECHA" />
+            <PropertyRef Name="VALOR" />
+          </Key>
+          <Property Name="ID_FACTURA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" />
+          <Property Name="VALOR" Type="Decimal" Precision="12" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+            <PropertyRef Name="PESO" />
+            <PropertyRef Name="DESCRIPCION" />
+            <PropertyRef Name="ID_FACTURA" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PESO" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ALTO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ANCHO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LARGO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_FACTURA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ContextoTLE" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="FACTURA" EntityType="Self.FACTURA" />
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_TLEModelStoreContainer" CdmEntityContainer="ContextoTLE">
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="DB_TLEModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="IDENTIFICACION" ColumnName="IDENTIFICACION" />
+                <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
+                <ScalarProperty Name="APELLIDOS" ColumnName="APELLIDOS" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FACTURA">
+            <EntityTypeMapping TypeName="DB_TLEModel.FACTURA">
+              <MappingFragment StoreEntitySet="FACTURA">
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTO">
+            <EntityTypeMapping TypeName="DB_TLEModel.PRODUCTO">
+              <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+                <ScalarProperty Name="PESO" ColumnName="PESO" />
+                <ScalarProperty Name="ALTO" ColumnName="ALTO" />
+                <ScalarProperty Name="ANCHO" ColumnName="ANCHO" />
+                <ScalarProperty Name="LARGO" ColumnName="LARGO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ID_FACTURA" ColumnName="ID_FACTURA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

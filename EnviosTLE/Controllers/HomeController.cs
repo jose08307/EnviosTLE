@@ -1,5 +1,6 @@
-﻿using Datos;
+﻿
 using EnviosTLE.Comun;
+using EnviosTLE.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,41 +23,41 @@ namespace EnviosTLE.Controllers
             return View();
         }
 
-        public ActionResult ConsultarCliente()
-        {
-            List<ClienteRemitenteDTO> resultado = new List<ClienteRemitenteDTO>();
-            using (ContextoEnvio db = new ContextoEnvio())
-            {
-                resultado = db.CLIENTE_REMITENTE.Select(x => new ClienteRemitenteDTO
-                {
+        //public ActionResult ConsultarCliente()
+        //{
+        //    List<ClienteDTO> resultado = new List<ClienteDTO>();
+        //    using (ContextoTLE db = new ContextoTLE())
+        //    {
+        //        resultado = db.CLIENTE.Select(x => new ClienteDTO
+        //        {
 
-                    CEDULA = x.CEDULA,
-                    NOMBRE = x.NOMBRE,
-                    APELLIDO = x.APELLIDO,
-                    DIRECCION = x.DIRECCION,
-                    TELEFONO = x.TELEFONO,
-                }).ToList();
-            }
-            return View(resultado);
-        }
+        //            CEDULA = x.CEDULA,
+        //            NOMBRE = x.NOMBRE,
+        //            APELLIDO = x.APELLIDO,
+        //            DIRECCION = x.DIRECCION,
+        //            TELEFONO = x.TELEFONO,
+        //        }).ToList();
+        //    }
+        //    return View(resultado);
+        //}
 
-        public ClienteRemitenteDTO ConsultarClientesPorId(decimal _idcedula)
-        {
-            ClienteRemitenteDTO resultado = new ClienteRemitenteDTO();
-            using (ContextoEnvio db = new ContextoEnvio())
-            {
-                resultado = db.CLIENTE_REMITENTE.Where(x => x.CEDULA == _idcedula).Select(x => new ClienteRemitenteDTO
-                {
+        //public ClienteDTO ConsultarClientesPorId(decimal _idcedula)
+        //{
+        //    ClienteDTO resultado = new ClienteDTO();
+        //    using (ContextoTLE db = new ContextoTLE())
+        //    {
+        //        resultado = db.CLIENTE.Where(x => x.CEDULA == _idcedula).Select(x => new ClienteDTO
+        //        {
 
-                    CEDULA = x.CEDULA,
-                    NOMBRE = x.NOMBRE,
-                    APELLIDO = x.APELLIDO,
-                    DIRECCION = x.DIRECCION,
-                    TELEFONO = x.TELEFONO,
-                }).FirstOrDefault();
-                return resultado;
-            }
-        }
+        //            CEDULA = x.CEDULA,
+        //            NOMBRE = x.NOMBRE,
+        //            APELLIDO = x.APELLIDO,
+        //            DIRECCION = x.DIRECCION,
+        //            TELEFONO = x.TELEFONO,
+        //        }).FirstOrDefault();
+        //        return resultado;
+        //    }
+        //}
 
 
 

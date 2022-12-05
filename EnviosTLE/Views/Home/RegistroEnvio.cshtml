@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "RegistroEnvio";
 }
-
+<script src="~/Scripts/RegistroEnvios.js"></script>
 <h2>Registro Envio</h2>
 <style>
 
@@ -10,110 +10,139 @@
         background: #3743d0;
         color: white;
         padding-left: 8px;
-        padding-top: 1px;
-        padding-bottom: 1px
     }
 </style>
-<div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">Quick Example</h3>
-    </div>s
+<div class="card card-primary" id="Contendor1" style="display:block">
+    <div class="card-header bg-success">
+        <h3 class="card-title">Remitente</h3>
+    </div>
     <div class="card-body">
-        <div class="form-group">
-            <label>Numero de identificaciòn</label>
-            <input class="form-control" id="IdentificacionEnvia" placeholder="Ingrese cedula">
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <label>Numero de identificaciòn</label>
+                <input class="form-control" style="width:100%" id="IdentificacionEnvia" placeholder="Ingrese cedula">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Nombres</label>
+                <input class="form-control" style="width:100%" id="NombreEnvia" placeholder="Ingrese nombre">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Apellidos</label>
+                <input class="form-control" style="width:100%" id="ApellidoEnvia" placeholder="Ingrese apellidos">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Direcciòn</label>
+                <input class="form-control" style="width:100%" id="DireccionEnvia" placeholder="Ingrese direccion">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Numero telefonico</label>
+                <input class="form-control" style="width:100%" id="TelefonoEnvia" placeholder="Ingrese telefono">
+                <br />
+            </div>
         </div>
-        <div class="form-group">
-            <label>Nombres</label>
-            <input class="form-control" id="NombreEnvia" placeholder="Ingrese nombre">
-        </div>
-        <div class="form-group">
-            <label>Apellidos</label>
-            <input class="form-control" id="NombreEnvia" placeholder="Ingrese nombre">
-        </div>
-        <div class="form-group">
-            <label>Direcciòn</label>
-            <input class="form-control" id="DireccionEnvia" placeholder="Ingrese direccion">
-        </div>
-        <div class="form-group">
-            <label>Numero telefonico</label>
-            <input class="form-control" id="TelefonoEnvia" placeholder="Ingrese telefono">
+
+        <div class="row" style="padding-left: 15px">
+            <button type="submit" class="btn btn-success" onclick="MostrarPaso2()">Siguiente</button>
         </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button><div class="card-footer">
-
-    </div>
+    <br />
 </div>
-<br />
-<br />
-<div class="card card-primary">
+
+
+
+<div class="card card-primary" id="Contendor2" style="display:none">
     <div class="card-header">
-        <h3 class="card-title">Quick Example</h3>
+        <h3 class="card-title">Destinatario</h3>
     </div>
     <div class="card-body">
-        <div class="form-group">
-            <label>Numero de identificaciòn</label>
-            <input class="form-control" id="IdentificacionRecibe" placeholder="Ingrese cedula">
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <label>Numero de identificaciòn</label>
+                <input class="form-control" id="IdentificacionRecibe" placeholder="Ingrese cedula">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Nombres</label>
+                <input class="form-control" id="NombreRecibe" placeholder="Ingrese nombre">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Apellidos</label>
+                <input class="form-control" id="ApellidoRecibe" placeholder="Ingrese apellidos">
+                <br />
+            </div>
+
+            <div class="col-md-4">
+                <label>Direcciòn destino</label>
+                <input class="form-control" id="DireccionRecibe" placeholder="Ingrese direccion">
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Numero telefonico</label>
+                <input class="form-control" id="TelefonoRecibe" placeholder="Ingrese telefono">
+                <br />
+            </div>
         </div>
-        <div class="form-group">
-            <label>Nombres</label>
-            <input class="form-control" id="NombreRecibe" placeholder="Ingrese nombre">
-        </div>
-        <div class="form-group">
-            <label>Apellidos</label>
-            <input class="form-control" id="NombreRecibe" placeholder="Ingrese nombre">
-        </div>
-        <div class="form-group">
-            <label>Direcciòn destino</label>
-            <input class="form-control" id="DireccionRecibe" placeholder="Ingrese direccion">
-        </div>
-        <div class="form-group">
-            <label>Numero telefonico</label>
-            <input class="form-control" id="TelefonoRecibe" placeholder="Ingrese telefono">
+
+        <div class="row" style="padding-left: 15px">
+            <button type="submit" class="btn btn-success" onclick="MostrarPaso1()">Regresar</button>
+            <button type="submit" class="btn btn-primary" onclick="MostrarPaso3()">Siguiente</button>
         </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button><div class="card-footer">
-
-    </div>
+    <br />
 </div>
-<br />
-<br />
 
-<div class="card card-primary">
+
+
+<div class="card card-primary" id="Contendor3" style="display:none">
     <div class="card-header">
-        <h3 class="card-title">Quick Example</h3>
+        <h3 class="card-title">Producto</h3>
     </div>
     <div class="card-body">
-        <div class="form-group">
-            <label>Tipo producto</label>
-            <select class="form-control" id="IdentificacionEnvia">
-                <option value="">Seleccione</option>
-                <option value="value">Documento</option>
-                <option value="value">Paquete</option>
-            </select>
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <label>Tipo producto</label>
+                <select class="form-control" id="TipoPaquete" onchange="VerificarTipoPaquete()">
+                    <option value="" selected disabled>Seleccione</option>
+                    <option value="Documento">Documento</option>
+                    <option value="Paquete">Paquete</option>
+                </select>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Peso</label>
+                <input class="form-control" id="PesoProducto" placeholder="Ingrese cantidad en kilogramos">
+                <br />
+            </div>
+            <div class="col-md-4" id="mostrarAltoProducto" style="display:none">
+                <label>Alto</label>
+                <input class="form-control" id="AltoProducto" placeholder="Ingrese alto en centìmetros">
+                <br />
+            </div>
+            <div class="col-md-4" id="mostrarAnchoProducto" style="display:none">
+                <label>Ancho</label>
+                <input class="form-control" id="AnchoProducto" placeholder="Ingrese ancho en centìmetros">
+                <br />
+            </div>
+            <div class="col-md-4" id="mostrarLargoProducto" style="display:none">
+                <label>Largo</label>
+                <input class="form-control" id="LargoProducto" placeholder="Ingrese largo en centìmetros">
+                <br />
+            </div>
         </div>
-        <div class="form-group">
-            <label>Nombres</label>
-            <input class="form-control" id="NombreEnvia" placeholder="Ingrese nombre">
-        </div>
-        <div class="form-group">
-            <label>Apellidos</label>
-            <input class="form-control" id="NombreEnvia" placeholder="Ingrese nombre">
-        </div>
-        <div class="form-group">
-            <label>Direcciòn</label>
-            <input class="form-control" id="DireccionEnvia" placeholder="Ingrese direccion">
-        </div>
-        <div class="form-group">
-            <label>Numero telefonico</label>
-            <input class="form-control" id="TelefonoEnvia" placeholder="Ingrese telefono">
+
+        <div class="row" style="padding-left: 15px">
+            <button type="submit" class="btn btn-success" onclick="MostrarPaso2()">Regresar</button>
+            <button type="submit" class="btn btn-primary"onclick="GuardarEnvio()">Guardar</button>
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button><div class="card-footer">
-
-    </div>
 </div>
 
