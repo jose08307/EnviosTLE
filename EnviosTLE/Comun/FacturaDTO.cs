@@ -27,6 +27,8 @@ namespace EnviosTLE.Comun
         public string NOMBRES { get; set; }
         public string APELLIDOS { get; set; }
         public string DIRECCION { get; set; }
+        public string DIRECCION_DES { get; set; }
+        public string DIRECCION_ORI { get; set; }
         public string TELEFONO { get; set; }
         public string TIPO { get; set; }
 

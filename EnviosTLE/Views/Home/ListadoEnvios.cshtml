@@ -9,7 +9,7 @@
 </nav>
 
 <div class="card card-primary" id="Contendor1" style="display:block">
-    <div class="card-header bg-success">
+    <div class="card-header bg-primary">
         <h1 class="card-title">Remitente</h1>
     </div>
     <div class="card-body">
@@ -20,6 +20,8 @@
                         <th>No. </th>
                         <th>Código</th>
                         <th>Fecha</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
                         <th>Valor</th>
                         <th></th>
                     </tr>
@@ -34,12 +36,15 @@
                                 @item.CODIGO
                             </td>
                             <td>@item.FECHA</td>
+                            <td>@item.DIRECCION_ORI</td>
+                            <td>@item.DIRECCION_DES</td>
                             <td>$ @item.VALOR</td>
-                            <td><button class="btn btn-success"><i class="fa fas-search"></i>Ver</button></td>
+                            <td><a class="btn btn-success" href="@Url.Action("DetalleEnvio","Home", new {_idFactura = item.ID_FACTURA })" ><i class="fa fas-search"></i>Ver</a></td>
                         </tr>
+
+                        @(contador++)
                     }
 
-                    @(contador++)
 
                 </tbody>
             </table>

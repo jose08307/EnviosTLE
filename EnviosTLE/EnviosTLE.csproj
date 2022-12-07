@@ -337,11 +337,7 @@
     <Content Include="Content\AdminLTE-3.2.0\docs\_includes\sidebar.html" />
     <Content Include="Content\AdminLTE-3.2.0\docs\_layouts\default.html" />
     <Content Include="Content\AdminLTE-3.2.0\docs\_layouts\page.html" />
-    <Content Include="Content\AdminLTE-3.2.0\iframe-dark.html" />
-    <Content Include="Content\AdminLTE-3.2.0\iframe.html" />
-    <Content Include="Content\AdminLTE-3.2.0\index.html" />
-    <Content Include="Content\AdminLTE-3.2.0\index2.html" />
-    <Content Include="Content\AdminLTE-3.2.0\index3.html" />
+    <Content Include="Content\AdminLTE-3.2.0\img\fondoIndex.png" />
     <Content Include="Content\AdminLTE-3.2.0\jquery.dataTables.min.css" />
     <Content Include="Content\AdminLTE-3.2.0\pages\calendar.html" />
     <Content Include="Content\AdminLTE-3.2.0\pages\charts\chartjs.html" />
@@ -2275,7 +2271,7 @@
     <Content Include="Content\AdminLTE-3.2.0\plugins\uplot\uPlot.iife.js" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\uplot\uPlot.min.css" />
-    <Content Include="Content\AdminLTE-3.2.0\starter.html" />
+    <Content Include="Content\AdminLTE-3.2.0\styleLogin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -2287,19 +2283,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\AdminLTE-3.2.0\.browserslistrc" />
-    <Content Include="Content\AdminLTE-3.2.0\.bundlewatch.config.json" />
-    <Content Include="Content\AdminLTE-3.2.0\.dockerignore" />
-    <Content Include="Content\AdminLTE-3.2.0\.editorconfig" />
-    <Content Include="Content\AdminLTE-3.2.0\.eslintignore" />
-    <Content Include="Content\AdminLTE-3.2.0\.eslintrc.json" />
-    <Content Include="Content\AdminLTE-3.2.0\.gitattributes" />
-    <Content Include="Content\AdminLTE-3.2.0\.gitignore" />
-    <Content Include="Content\AdminLTE-3.2.0\.gitpod.yml" />
-    <Content Include="Content\AdminLTE-3.2.0\.lgtm.yml" />
-    <Content Include="Content\AdminLTE-3.2.0\.npmignore" />
-    <Content Include="Content\AdminLTE-3.2.0\.stylelintignore" />
-    <Content Include="Content\AdminLTE-3.2.0\.stylelintrc" />
     <Content Include="Content\AdminLTE-3.2.0\build\config\.eslintrc.json" />
     <Content Include="Content\AdminLTE-3.2.0\build\npm\.eslintrc.json" />
     <Content Include="Content\AdminLTE-3.2.0\build\scss\adminlte.scss" />
@@ -2391,8 +2374,6 @@
     <Content Include="Content\AdminLTE-3.2.0\build\scss\_users-list.scss" />
     <Content Include="Content\AdminLTE-3.2.0\build\scss\_variables-alt.scss" />
     <Content Include="Content\AdminLTE-3.2.0\build\scss\_variables.scss" />
-    <Content Include="Content\AdminLTE-3.2.0\CODE_OF_CONDUCT.md" />
-    <Content Include="Content\AdminLTE-3.2.0\composer.json" />
     <Content Include="Content\AdminLTE-3.2.0\dist\css\adminlte.css.map" />
     <Content Include="Content\AdminLTE-3.2.0\dist\css\adminlte.min.css.map" />
     <Content Include="Content\AdminLTE-3.2.0\dist\css\alt\adminlte.components.css.map" />
@@ -2410,8 +2391,6 @@
     <Content Include="Content\AdminLTE-3.2.0\dist\js\.eslintrc.json" />
     <Content Include="Content\AdminLTE-3.2.0\dist\js\adminlte.js.map" />
     <Content Include="Content\AdminLTE-3.2.0\dist\js\adminlte.min.js.map" />
-    <Content Include="Content\AdminLTE-3.2.0\docker-compose.yml" />
-    <Content Include="Content\AdminLTE-3.2.0\Dockerfile" />
     <Content Include="Content\AdminLTE-3.2.0\docs\additional-styles.md" />
     <Content Include="Content\AdminLTE-3.2.0\docs\assets\css\adminlte.css.map" />
     <Content Include="Content\AdminLTE-3.2.0\docs\assets\css\adminlte.min.css.map" />
@@ -2495,9 +2474,6 @@
     <Content Include="Content\AdminLTE-3.2.0\docs\license.md" />
     <Content Include="Content\AdminLTE-3.2.0\docs\upgrade-guide.md" />
     <Content Include="Content\AdminLTE-3.2.0\docs\_config.yml" />
-    <Content Include="Content\AdminLTE-3.2.0\LICENSE" />
-    <Content Include="Content\AdminLTE-3.2.0\package-lock.json" />
-    <Content Include="Content\AdminLTE-3.2.0\package.json" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js.map" />
@@ -2614,7 +2590,6 @@
     <Content Include="Content\AdminLTE-3.2.0\plugins\summernote\summernote.js.map" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\AdminLTE-3.2.0\plugins\toastr\toastr.js.map" />
-    <Content Include="Content\AdminLTE-3.2.0\README.md" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2649,8 +2624,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\RegistroEnvio.cshtml" />
     <Content Include="Views\Home\ConsultarCliente.cshtml" />
-    <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Home\ListadoEnvios.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\DetalleEnvio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

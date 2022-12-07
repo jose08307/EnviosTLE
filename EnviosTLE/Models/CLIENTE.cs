@@ -30,6 +30,10 @@ namespace EnviosTLE.Models
 
         [Required]
         [StringLength(50)]
+        public string CIUDAD { get; set; }
+
+        [Required]
+        [StringLength(50)]
         public string TELEFONO { get; set; }
 
         [Required]

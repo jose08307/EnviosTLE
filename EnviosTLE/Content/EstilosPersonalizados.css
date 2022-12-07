@@ -2,3 +2,7 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.bg-primary {
+    background-color: #688cb2 !important;
+}

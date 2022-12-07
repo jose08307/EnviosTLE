@@ -53,6 +53,7 @@ function GuardarEnvio() {
         NOMBRES: $("#NombreEnvia").val(),
         APELLIDOS: $("#ApellidoEnvia").val(),
         DIRECCION: $("#DireccionEnvia").val(),
+        CIUDAD: $("#ciudadEnvia").val(),
         TELEFONO: $("#TelefonoEnvia").val(),
         TIPO: "Remitente",
     }
@@ -64,6 +65,7 @@ function GuardarEnvio() {
         IDENTIFICACION: $("#IdentificacionRecibe").val(),
         NOMBRES: $("#NombreRecibe").val(),
         APELLIDOS: $("#ApellidoRecibe").val(),
+        CIUDAD: $("#ciudadRecibe").val(),
         DIRECCION: $("#DireccionRecibe").val(),
         TELEFONO: $("#TelefonoRecibe").val(),
         TIPO: "Destinatario",

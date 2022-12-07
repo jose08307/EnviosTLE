@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Detalle Envio";
+}
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left: 0px; margin-bottom: 9px; ">
+    <h2>Detalle Envío</h2>
+</nav>
+
+<div class="card card-primary" id="Contendor0" style="display:block">
+    <div class="card-header bg-primary">
+        <h1 class="card-title">Factura</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <label>Código</label>
+                <input class="form-control" style="width:100%" id="IdentificacionEnvia" value="@ViewBag.Factura.CODIGO" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Fecha</label>
+                <input class="form-control" style="width:100%" id="NombreEnvia" value="@ViewBag.Factura.FECHA" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Valor</label>
+                <input class="form-control" style="width:100%" id="ApellidoEnvia" value="@ViewBag.Factura.VALOR" disabled>
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+
+<div class="card card-primary" id="Contendor1" style="display:block">
+    <div class="card-header bg-primary">
+        <h1 class="card-title">Remitente</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <label>Numero de identificaciòn</label>
+                <input class="form-control" style="width:100%" id="IdentificacionEnvia" value="@ViewBag.Remitente.IDENTIFICACION" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Nombres</label>
+                <input class="form-control" style="width:100%" id="NombreEnvia" value="@ViewBag.Remitente.NOMBRES" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Apellidos</label>
+                <input class="form-control" style="width:100%" id="ApellidoEnvia" value="@ViewBag.Remitente.APELLIDOS" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Direcciòn</label>
+                <input class="form-control" style="width:100%" id="DireccionEnvia" value="@ViewBag.Remitente.DIRECCION" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Numero telefonico</label>
+                <input class="form-control" style="width:100%" id="TelefonoEnvia" value="@ViewBag.Remitente.TELEFONO" disabled>
+                <br />
+            </div>
+        </div>
+
+    </div>
+    <br />
+</div>
+
+<div class="card card-primary" id="Contendor2" style="display:block">
+    <div class="card-header bg-primary">
+        <h2 class="card-title">Destinatario</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <br />
+            <div class="col-md-4">
+                <label>Numero de identificaciòn</label>
+                <input class="form-control" id="IdentificacionRecibe" value="@ViewBag.Destinatario.IDENTIFICACION" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Nombres</label>
+                <input class="form-control" id="NombreRecibe" value="@ViewBag.Destinatario.NOMBRES" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Apellidos</label>
+                <input class="form-control" id="ApellidoRecibe" value="@ViewBag.Destinatario.APELLIDOS" disabled>
+                <br />
+            </div>
+
+            <div class="col-md-4">
+                <label>Direcciòn destino</label>
+                <input class="form-control" id="DireccionRecibe" value="@ViewBag.Destinatario.DIRECCION" disabled>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Numero telefonico</label>
+                <input class="form-control" id="TelefonoRecibe" value="@ViewBag.Destinatario.TELEFONO" disabled>
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+
+<div class="card card-primary" id="Contendor3" style="display: block">
+    <div class="card-header bg-primary">
+        <h2 class="card-title">Producto</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <br />
+            <div class="col-md-2">
+                <label>Peso</label>
+                <input class="form-control" id="PesoProducto" value="@ViewBag.Producto.PESO" disabled>
+                <br />
+            </div>
+            <div class="col-md-2" id="mostrarAltoProducto" style="display:none">
+                <label>Alto</label>
+                <input class="form-control" id="AltoProducto" value="@ViewBag.Producto.ALTO" disabled>
+                <br />
+            </div>
+            <div class="col-md-2" id="mostrarAnchoProducto" style="display:none">
+                <label>Ancho</label>
+                <input class="form-control" id="AnchoProducto" value="@ViewBag.Producto.ANCHO" disabled>
+                <br />
+            </div>
+            <div class="col-md-2" id="mostrarLargoProducto" style="display:none">
+                <label>Largo</label>
+                <input class="form-control" id="LargoProducto" value="@ViewBag.Producto.LARGO" disabled>
+                <br />
+            </div>
+            <div class="col-md-12" id="" style="display:block">
+                <label>Descripción</label>
+                <textarea class="form-control" id="DescripcionProducto" rows="4" disabled>@ViewBag.Producto.DESCRIPCION</textarea>
+                <br />
+            </div>
+        </div>
+
+        <div class="row" style="padding-left: 15px">
+            <a class="btn btn-success" href="@Url.Action("ListadoEnvios", "Home")" >Regresar</a>
+        </div>
+    </div>
+</div>
+

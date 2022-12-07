@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio Sesión - Renovar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/Content/AdminLTE-3.2.0/styleLogin.css" rel="stylesheet" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <!-- //web font -->
+    <style>
+        ::placeholder {
+            color: #8ec75b;
+        }
+    </style>
+</head>
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <div class="main-agileinfo">
+            <div class="agileits-top" style="border-radius: 13px; background-color: #ffffff; padding-top: 8px;; border: 1px solid #5a98d48a">
+                <form action="#" method="post">
+                    <br>
+                    <h1 style="font-size: 30px; color: gray;letter-spacing: 0px">Sistema TLE</h1>
+                    <div style="text-align: center;">
+                        <img src="~/Content/material-pro/src/assets/images/logo_renovar_verde.png" style=" width:20%; padding: 25px" />
+                    </div>
+                    <h1 style="font-size: 24px; color: gray;letter-spacing: 0px">Iniciar Sesión</h1>
+                    <br>
+                    <input style="background-color: #ecefeaa8; color: #696969; border-color: #5a98d48a; border-radius: 4px" class="text" type="text" name="usuario" required="" placeholder="Usuario">
+                    <input style="background-color: #ecefeaa8; color: #696969; border-color: #5a98d48a; border-radius: 4px " class="text email" type="password" name="contrasena" required="" placeholder="Contraseña">
+                    <h1 style="color:red; font-family: sans-serif; font-size: 16px; letter-spacing: initial; text-transform: lowercase">@ViewBag.errorIngreso</h1>
+                    <input type="submit" value="Ingresar" style="border-radius: 4px; background: #5997d3eb; border: solid #5a98d48a 1px" src="@Url.Action("Index","Home")">
+                </form>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+            Todos los derechos reservados &copy; Sistema de Información TLE 2022
+            <!-- //copyright -->
+            <ul class="colorlib-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //main -->
+</body>
+</html>

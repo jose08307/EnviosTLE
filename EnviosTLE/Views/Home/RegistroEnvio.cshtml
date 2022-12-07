@@ -9,7 +9,7 @@
 </nav>
 
 <div class="card card-primary" id="Contendor1" style="display:block">
-    <div class="card-header bg-success">
+    <div class="card-header bg-primary">
         <h1 class="card-title">Remitente</h1>
     </div>
     <div class="card-body">
@@ -31,26 +31,40 @@
                 <br />
             </div>
             <div class="col-md-4">
-                <label>Direcciòn</label>
+                <label>Ciudad Origen</label>
+                <select class="form-control" id="ciudadEnvia">
+                    <option value="" selected disabled>Seleccione</option>
+                    <option value="Bogota">Bogotá</option>
+                    <option value="Medellin">Medellin</option>
+                    <option value="Cali">Cali</option>
+                    <option value="Manizales">Manizales</option>
+                    <option value="Pereira">Pereira</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Cartagena">Cartagena</option>
+                </select>                
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Dirección</label>
                 <input class="form-control" style="width:100%" id="DireccionEnvia" placeholder="Ingrese direccion">
                 <br />
             </div>
             <div class="col-md-4">
-                <label>Numero telefonico</label>
+                <label>Numero telefónico</label>
                 <input class="form-control" style="width:100%" id="TelefonoEnvia" placeholder="Ingrese telefono">
                 <br />
             </div>
         </div>
 
         <div class="row" style="padding-left: 15px">
-            <button type="submit" class="btn btn-success" onclick="MostrarPaso2()">Siguiente</button>
+            <button type="submit" class="btn btn-primary" onclick="MostrarPaso2()">Siguiente</button>
         </div>
     </div>
     <br />
 </div>
 
 <div class="card card-primary" id="Contendor2" style="display:none">
-    <div class="card-header bg-success">
+    <div class="card-header bg-primary">
         <h2 class="card-title">Destinatario</h2>
     </div>
     <div class="card-body">
@@ -71,21 +85,34 @@
                 <input class="form-control" id="ApellidoRecibe" placeholder="Ingrese apellidos">
                 <br />
             </div>
-
             <div class="col-md-4">
-                <label>Direcciòn destino</label>
+                <label>Ciudad Destino</label>
+                <select class="form-control" id="ciudadRecibe">
+                    <option value="" selected disabled>Seleccione</option>
+                    <option value="Bogota">Bogotá</option>
+                    <option value="Medellin">Medellin</option>
+                    <option value="Cali">Cali</option>
+                    <option value="Manizales">Manizales</option>
+                    <option value="Pereira">Pereira</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Cartagena">Cartagena</option>
+                </select>
+                <br />
+            </div>
+            <div class="col-md-4">
+                <label>Dirección destino</label>
                 <input class="form-control" id="DireccionRecibe" placeholder="Ingrese direccion">
                 <br />
             </div>
             <div class="col-md-4">
-                <label>Numero telefonico</label>
+                <label>Numero telefónico</label>
                 <input class="form-control" id="TelefonoRecibe" placeholder="Ingrese telefono">
                 <br />
             </div>
         </div>
 
         <div class="row" style="padding-left: 15px">
-            <button type="submit" class="btn btn-success" onclick="MostrarPaso1()">Regresar</button>
+            <button type="submit" class="btn btn-primary" onclick="MostrarPaso1()">Regresar</button>
             <button type="submit" class="btn btn-primary" onclick="MostrarPaso3()">Siguiente</button>
         </div>
     </div>
@@ -93,7 +120,7 @@
 </div>
 
 <div class="card card-primary" id="Contendor3" style="display:none">
-    <div class="card-header bg-success">
+    <div class="card-header bg-primary">
         <h2 class="card-title">Producto</h2>
     </div>
     <div class="card-body">
@@ -136,8 +163,8 @@
         </div>
 
         <div class="row" style="padding-left: 15px">
-            <button type="submit" class="btn btn-success" onclick="MostrarPaso2()">Regresar</button>
-            <button type="submit" class="btn btn-primary" onclick="GuardarEnvio()">Guardar</button>
+            <button type="submit" class="btn btn-primary" onclick="MostrarPaso2()">Regresar</button>
+            <button type="submit" class="btn btn-success" onclick="GuardarEnvio()">Guardar</button>
         </div>
     </div>
 

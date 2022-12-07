@@ -10,6 +10,7 @@ namespace EnviosTLE.Comun
         public string ID_CLIENTE { get; set; }
         public decimal IDENTIFICACION { get; set; }
         public string NOMBRES { get; set; }
+        public string CIUDAD { get; set; }
         public string APELLIDOS { get; set; }
         public string DIRECCION { get; set; }
         public string TELEFONO { get; set; }

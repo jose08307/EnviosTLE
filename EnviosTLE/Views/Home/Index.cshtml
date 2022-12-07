@@ -2,44 +2,58 @@
     ViewBag.Title = "Home Page";
 }
 
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Fixed Layout</h1>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Menu</li>
-                </ol>
-            </div>
-        </div>
-    </div><!-- /.container-fluid -->
-</section>
+<style>
+    .jumbotron {
+        position: relative;
+        padding: 0px;
+    }
 
-<div class="jumbotron">
-    <h1>Empresa de envios TPE</h1>
-    <p class="lead">Brindamos soluciones de envios dentro y fuera de la ciudad a nivel nacional Envios TPE Todo lo que Pueda Enviar </p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    #imagenIndex {
+        opacity: 0.3;
+        width: 100%;
+        height: 400px;
+    }
+
+    #tituloIndex {
+        position: absolute;
+        top: 10%;
+        left: 3%;
+    }
+
+    #parrafoIndex {
+        position: absolute;
+        top: 33%;
+        left: 3%;
+        font-size: 29px;
+    }
+</style>
+
+<div class="jumbotron" @*style="background-image: url('../../Content/AdminLTE-3.2.0/img/fondoIndex.png');"*@>
+    <img src="~/Content/AdminLTE-3.2.0/img/fondoIndex.png" id="imagenIndex" />
+    <h1 id="tituloIndex" style="font-size:80px">Empresa de Envíos TPE</h1>
+    <p class="lead" id="parrafoIndex" style="font-size:30px"><b>Brindamos soluciones de envios dentro y fuera de la ciudad a nivel nacional Envios TPE Todo lo que Pueda Enviar </b></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+    <div class="col-md-4" style="background: #bcbce1; padding: 28px">
+        <h2>Seguridad</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Nuestra prioridad es que su mercancia llegue a su destino en optimas condiciones,
+            evitando posibles perdidas por deterioro durante el trayecto
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="col-md-4" style="background: #bcdae1; padding: 28px">
+        <h2>Agilidad</h2>
+        <p>
+            Velamos porque las entregas se realicen en el menor tiempo posible, para lo que contamos con una amplia
+            red de vehículos para que sus paquetes lleguen sin retrazos
+        </p>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-4" style="background: #bcbce1; padding: 28px">
+        <h2>Experiencia</h2>
+        <p>
+            Tenemos varios años de experiencia en el servicio de mensajeria, siendo reconocidos nacionalmente como
+            una de las empresas mas confiables del sector.
+        </p>
     </div>
 </div>

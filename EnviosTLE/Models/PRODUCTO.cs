@@ -25,7 +25,7 @@ namespace EnviosTLE.Models
         [Column(TypeName = "numeric")]
         public decimal? LARGO { get; set; }
 
-        [Column(TypeName = "numeric")]
+        [StringLength(200)]
         public string DESCRIPCION { get; set; }
 
         [Required]
