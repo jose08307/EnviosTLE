@@ -92,7 +92,7 @@ function GuardarEnvio() {
 
     else if ($("#TipoPaquete").val() == "Paquete") {
         valorFactura = valorFactura + ($("#PesoProducto").val() * 4000);
-        valorFactura = valorFactura + (($("#AltoProducto").val() * $("#AnchoProducto").val() * $("#LargoProducto").val()) * 200);
+        valorFactura = valorFactura + (($("#AltoProducto").val() * $("#AnchoProducto").val() * $("#LargoProducto").val()) * 1.5);
     }
 
     valorFacturaDecimal = formatNumberES(valorFactura);
