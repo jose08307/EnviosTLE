@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Listado de Envios";
+    var contador = 1;
+}
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left: 0px; margin-bottom: 9px; ">
+    <h2>Listado Envíos</h2>
+</nav>
+
+<div class="card card-primary" id="Contendor1" style="display:block">
+    <div class="card-header bg-success">
+        <h1 class="card-title">Remitente</h1>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive m-t-40">
+            <table class="table table-bordered table-striped" id="tablaEnvios">
+                <thead>
+                    <tr>
+                        <th>No. </th>
+                        <th>Código</th>
+                        <th>Fecha</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in ViewBag.ListaEnvios)
+                    {
+                        <tr>
+                            <td>@contador</td>
+                            <td>
+                                @item.CODIGO
+                            </td>
+                            <td>@item.FECHA</td>
+                            <td>$ @item.VALOR</td>
+                            <td><button class="btn btn-success"><i class="fa fas-search"></i>Ver</button></td>
+                        </tr>
+                    }
+
+                    @(contador++)
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

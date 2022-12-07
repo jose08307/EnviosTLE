@@ -44,19 +44,95 @@ function VerificarTipoPaquete() {
 }
 
 function GuardarEnvio() {
-    var ListaClientes = []
-    var FacturaDTO = {
+    var ListaClientes = [];
+    var ListaProductos = [];
 
-        
+    var cliente = {
+
         IDENTIFICACION: $("#IdentificacionEnvia").val(),
-         
         NOMBRES: $("#NombreEnvia").val(),
         APELLIDOS: $("#ApellidoEnvia").val(),
         DIRECCION: $("#DireccionEnvia").val(),
         TELEFONO: $("#TelefonoEnvia").val(),
-        TIPO: $("#TipoEnvia").val(),
-        ID_FACTURA
-
+        TIPO: "Remitente",
     }
 
+    ListaClientes.push(cliente);
+
+    var cliente = {
+
+        IDENTIFICACION: $("#IdentificacionRecibe").val(),
+        NOMBRES: $("#NombreRecibe").val(),
+        APELLIDOS: $("#ApellidoRecibe").val(),
+        DIRECCION: $("#DireccionRecibe").val(),
+        TELEFONO: $("#TelefonoRecibe").val(),
+        TIPO: "Destinatario",
+    }
+
+    ListaClientes.push(cliente);
+
+    var FacturaDTO = {
+
+        PESO: $("#PesoProducto").val(),
+        ALTO: $("#AltoProducto").val(),
+        ANCHO: $("#AnchoProducto").val(),
+        LARGO: $("#LargoProducto").val(),
+        DESCRIPCION: $("#DescripcionProducto").val(),
+        ListaClientes: ListaClientes
+    }
+
+    var valorFactura = 0;
+    var valorFacturaDecimal = 0;
+
+    if ($("#PesoProducto").val() <= 2 && $("#TipoPaquete").val() == "Documento") {
+        valorFactura = valorFactura + 8000;
+    }
+
+    else if ($("#TipoPaquete").val() == "Paquete") {
+        valorFactura = valorFactura + ($("#PesoProducto").val() * 4000);
+        valorFactura = valorFactura + (($("#AltoProducto").val() * $("#AnchoProducto").val() * $("#LargoProducto").val()) * 200);
+    }
+
+    valorFacturaDecimal = formatNumberES(valorFactura);
+    FacturaDTO.VALOR = valorFactura;
+
+    Swal.fire({
+        title: 'Valor factura: $' + valorFactura,
+        text: "¿Desea continuar con el envío?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: 'green',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            var data = { FacturaDTO };
+
+            $.post("GuardarEnvio/Home", data).done(function () {
+
+                Swal.fire(
+                    'Enviado!',
+                    'Su registro ha sido guardado',
+                    'success'
+                ).then(() => {
+                    window.location = "ListadoEnvios";
+                });
+
+            }).fail();
+        }
+    })
+}
+
+const formatNumberES = (n, d = 0) => {
+    n = new Intl.NumberFormat("es-ES").format(parseFloat(n).toFixed(d))
+    if (d > 0) {
+        // Obtenemos la cantidad de decimales que tiene el numero
+        const decimals = n.indexOf(",") > -1 ? n.length - 1 - n.indexOf(",") : 0;
+
+        // añadimos los ceros necesios al numero
+        n = (decimals == 0) ? n + "," + "0".repeat(d) : n + "0".repeat(d - decimals);
+    }
+    return n;
 }

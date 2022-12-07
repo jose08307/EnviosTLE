@@ -1,30 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
 namespace EnviosTLE.Models
 {
-    [Serializable]
-    [Table(nameof(CLIENTE), Schema = "DB_TLE")]
-    public class PRODUCTO
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("PRODUCTO")]
+    public partial class PRODUCTO
     {
         [Key]
+        [StringLength(40)]
         public string ID_PRODUCTO { get; set; }
+
+        [Column(TypeName = "numeric")]
         public decimal PESO { get; set; }
+
+        [Column(TypeName = "numeric")]
         public decimal? ALTO { get; set; }
+
+        [Column(TypeName = "numeric")]
         public decimal? ANCHO { get; set; }
+
+        [Column(TypeName = "numeric")]
         public decimal? LARGO { get; set; }
+
+        [Column(TypeName = "numeric")]
         public string DESCRIPCION { get; set; }
 
-        [ForeignKey("FACTURA")]
+        [Required]
+        [StringLength(40)]
         public string ID_FACTURA { get; set; }
-
 
         public virtual FACTURA FACTURA { get; set; }
     }
 }
-

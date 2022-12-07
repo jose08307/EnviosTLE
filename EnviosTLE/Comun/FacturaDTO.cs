@@ -10,6 +10,8 @@ namespace EnviosTLE.Comun
         public string ID_FACTURA { get; set; }
         public DateTime FECHA { get; set; }
         public decimal VALOR { get; set; }
+        public decimal CODIGO { get; set; }
+
 
 
         public string ID_PRODUCTO { get; set; }

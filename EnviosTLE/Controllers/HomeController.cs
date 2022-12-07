@@ -13,7 +13,11 @@ namespace EnviosTLE.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            using (ContextoTLE db = new ContextoTLE())
+            {
+                
+                return View();
+            }
         }
 
         public ActionResult RegistroEnvio()
@@ -23,43 +27,79 @@ namespace EnviosTLE.Controllers
             return View();
         }
 
-        //public ActionResult ConsultarCliente()
-        //{
-        //    List<ClienteDTO> resultado = new List<ClienteDTO>();
-        //    using (ContextoTLE db = new ContextoTLE())
-        //    {
-        //        resultado = db.CLIENTE.Select(x => new ClienteDTO
-        //        {
+        public JsonResult GuardarEnvio(FacturaDTO facturaDTO)
+        {
+            try
+            {
+                using (ContextoTLE db = new ContextoTLE())
+                {
+                    var _ID_FACTURA = Guid.NewGuid().ToString();
+                    var codigo = Convert.ToDecimal((DateTime.Now.ToString("yy-MM-dd HH:mm")).Replace("-", "").Replace(" ", "").Replace(":",""));
 
-        //            CEDULA = x.CEDULA,
-        //            NOMBRE = x.NOMBRE,
-        //            APELLIDO = x.APELLIDO,
-        //            DIRECCION = x.DIRECCION,
-        //            TELEFONO = x.TELEFONO,
-        //        }).ToList();
-        //    }
-        //    return View(resultado);
-        //}
+                    var resultado = db.FACTURA.Add(new FACTURA
+                    {
+                        ID_FACTURA = _ID_FACTURA,
+                        FECHA = DateTime.Now,
+                        VALOR = facturaDTO.VALOR,
+                        CODIGO = codigo
+                    });
 
-        //public ClienteDTO ConsultarClientesPorId(decimal _idcedula)
-        //{
-        //    ClienteDTO resultado = new ClienteDTO();
-        //    using (ContextoTLE db = new ContextoTLE())
-        //    {
-        //        resultado = db.CLIENTE.Where(x => x.CEDULA == _idcedula).Select(x => new ClienteDTO
-        //        {
+                    if (db.SaveChanges() > 0)
+                    {
+                        var producto = db.PRODUCTO.Add(new PRODUCTO
+                        {
+                            ID_PRODUCTO = Guid.NewGuid().ToString(),
+                            ALTO = facturaDTO.ALTO,
+                            ANCHO = facturaDTO.ANCHO,
+                            LARGO = facturaDTO.LARGO,
+                            PESO = facturaDTO.PESO,
+                            DESCRIPCION = facturaDTO.DESCRIPCION,
+                            ID_FACTURA = _ID_FACTURA
+                        });
+                    }
 
-        //            CEDULA = x.CEDULA,
-        //            NOMBRE = x.NOMBRE,
-        //            APELLIDO = x.APELLIDO,
-        //            DIRECCION = x.DIRECCION,
-        //            TELEFONO = x.TELEFONO,
-        //        }).FirstOrDefault();
-        //        return resultado;
-        //    }
-        //}
+                    if (db.SaveChanges() > 0)
+                    {
+                        foreach (var item in facturaDTO.ListaClientes)
+                        {
+                            var cliente = db.CLIENTE.Add(new CLIENTE
+                            {
+                                ID_CLIENTE = Guid.NewGuid().ToString(),
+                                NOMBRES = item.NOMBRES,
+                                APELLIDOS = item.APELLIDOS,
+                                IDENTIFICACION = item.IDENTIFICACION,
+                                DIRECCION = item.DIRECCION,
+                                TELEFONO = item.TELEFONO,
+                                TIPO = item.TIPO,
+                                ID_FACTURA = _ID_FACTURA
+                            });
+
+                            db.SaveChanges();
+                        }
+                    }
+
+                    return Json(true);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(false);
+
+            }
 
 
+        }
+
+        public ActionResult ListadoEnvios()
+        {
+            using (ContextoTLE db = new ContextoTLE())
+            {
+                ViewBag.ListaEnvios = db.FACTURA.ToList();
+            }
+
+            return View();
+        }
 
     }
 }

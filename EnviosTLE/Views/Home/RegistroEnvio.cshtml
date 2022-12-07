@@ -1,20 +1,16 @@
 ﻿
 @{
-    ViewBag.Title = "RegistroEnvio";
+    ViewBag.Title = "Registro Envio";
 }
-<script src="~/Scripts/RegistroEnvios.js"></script>
-<h2>Registro Envio</h2>
-<style>
 
-    .card-header {
-        background: #3743d0;
-        color: white;
-        padding-left: 8px;
-    }
-</style>
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left: 0px; margin-bottom: 9px; ">
+    <h2>Registro Envío</h2>
+</nav>
+
 <div class="card card-primary" id="Contendor1" style="display:block">
     <div class="card-header bg-success">
-        <h3 class="card-title">Remitente</h3>
+        <h1 class="card-title">Remitente</h1>
     </div>
     <div class="card-body">
         <div class="row">
@@ -53,11 +49,9 @@
     <br />
 </div>
 
-
-
 <div class="card card-primary" id="Contendor2" style="display:none">
-    <div class="card-header">
-        <h3 class="card-title">Destinatario</h3>
+    <div class="card-header bg-success">
+        <h2 class="card-title">Destinatario</h2>
     </div>
     <div class="card-body">
         <div class="row">
@@ -98,11 +92,9 @@
     <br />
 </div>
 
-
-
 <div class="card card-primary" id="Contendor3" style="display:none">
-    <div class="card-header">
-        <h3 class="card-title">Producto</h3>
+    <div class="card-header bg-success">
+        <h2 class="card-title">Producto</h2>
     </div>
     <div class="card-body">
         <div class="row">
@@ -116,31 +108,36 @@
                 </select>
                 <br />
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label>Peso</label>
-                <input class="form-control" id="PesoProducto" placeholder="Ingrese cantidad en kilogramos">
+                <input class="form-control" id="PesoProducto" placeholder="Peso en kg">
                 <br />
             </div>
-            <div class="col-md-4" id="mostrarAltoProducto" style="display:none">
+            <div class="col-md-2" id="mostrarAltoProducto" style="display:none">
                 <label>Alto</label>
-                <input class="form-control" id="AltoProducto" placeholder="Ingrese alto en centìmetros">
+                <input class="form-control" id="AltoProducto" placeholder="Peso en cm">
                 <br />
             </div>
-            <div class="col-md-4" id="mostrarAnchoProducto" style="display:none">
+            <div class="col-md-2" id="mostrarAnchoProducto" style="display:none">
                 <label>Ancho</label>
-                <input class="form-control" id="AnchoProducto" placeholder="Ingrese ancho en centìmetros">
+                <input class="form-control" id="AnchoProducto" placeholder="Ancho en cm">
                 <br />
             </div>
-            <div class="col-md-4" id="mostrarLargoProducto" style="display:none">
+            <div class="col-md-2" id="mostrarLargoProducto" style="display:none">
                 <label>Largo</label>
-                <input class="form-control" id="LargoProducto" placeholder="Ingrese largo en centìmetros">
+                <input class="form-control" id="LargoProducto" placeholder="Largo en cm">
+                <br />
+            </div>
+            <div class="col-md-12" id="" style="display:block">
+                <label>Descripción</label>
+                <textarea class="form-control" id="DescripcionProducto" placeholder="Ingrese descripción del producto" rows="4"></textarea>
                 <br />
             </div>
         </div>
 
         <div class="row" style="padding-left: 15px">
             <button type="submit" class="btn btn-success" onclick="MostrarPaso2()">Regresar</button>
-            <button type="submit" class="btn btn-primary"onclick="GuardarEnvio()">Guardar</button>
+            <button type="submit" class="btn btn-primary" onclick="GuardarEnvio()">Guardar</button>
         </div>
     </div>
 
