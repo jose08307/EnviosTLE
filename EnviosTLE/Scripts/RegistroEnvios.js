@@ -42,6 +42,8 @@ function VerificarTipoPaquete() {
     }
 
 }
+ //Funcuion para guardar el envio
+
 
 function GuardarEnvio() {
     var ListaClientes = [];
