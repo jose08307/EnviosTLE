@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnviosTLE", "EnviosTLE\EnviosTLE.csproj", "{B34C9007-C464-4C4D-BF48-D379D869A893}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9F4BC8D6-F8A2-4DC5-B395-59AA393F4F5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B34C9007-C464-4C4D-BF48-D379D869A893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B34C9007-C464-4C4D-BF48-D379D869A893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B34C9007-C464-4C4D-BF48-D379D869A893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F4BC8D6-F8A2-4DC5-B395-59AA393F4F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F4BC8D6-F8A2-4DC5-B395-59AA393F4F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F4BC8D6-F8A2-4DC5-B395-59AA393F4F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F4BC8D6-F8A2-4DC5-B395-59AA393F4F5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

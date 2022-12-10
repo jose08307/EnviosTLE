@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  enviostle:
+    image: ${DOCKER_REGISTRY-}enviostle
+    build:
+      context: .\EnviosTLE
+      dockerfile: Dockerfile
